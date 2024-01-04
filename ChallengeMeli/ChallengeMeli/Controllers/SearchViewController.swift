@@ -43,11 +43,6 @@ class SearchViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.searchController.dismiss(animated: true, completion: nil)
-    }
-
     // Apenas muestre la pantalla se enfoca el buscador
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -196,6 +191,7 @@ extension SearchViewController {
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.autocapitalizationType = .none
         self.searchController.searchBar.showsScopeBar = true
+        self.searchController.searchBar.delegate = self
         self.searchController.searchBar.placeholder = "Buscar"
         self.searchController.searchBar.setNewcolor(color: UIColor.black)
 

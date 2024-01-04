@@ -12,7 +12,7 @@ struct Product: Codable {
     let price: Int
     let originalPrice: Int?
     let currencyID: String
-    let initialQuantity, availableQuantity, soldQuantity: Int
+    let initialQuantity: Int
     let condition: String
     let pictures: [Picture]
     let attributes: [Attribute]
@@ -25,8 +25,6 @@ struct Product: Codable {
         case originalPrice = "original_price"
         case currencyID = "currency_id"
         case initialQuantity = "initial_quantity"
-        case availableQuantity = "available_quantity"
-        case soldQuantity = "sold_quantity"
         case condition
         case pictures
         case attributes
